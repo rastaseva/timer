@@ -12,17 +12,20 @@ window.onload = function() {
     let buttonReset = document.getElementById('button-reset');
     let Interval;
 
-    buttonStart.onclick = function() {
-        clearInterval(Interval);
-        Interval = setInterval(startTimer, 10)
-    }
+    buttonStart.onclick = start;
     buttonStop.onclick = function() {
         clearInterval(Interval)
     }
     buttonCircle.onclick = function() {
-        console.log(`${mins}:${seconds}:${tens}`);
+        let resultPrinter = document.getElementById("result-printer");
+        let resultEl = document.createElement('p');
+        resultEl.innerHTML = `${mins}:${seconds}:${tens}`
+        resultPrinter.appendChild(resultEl)
     }
-    buttonReset.onclick = function() {
+
+    buttonReset.onclick = reset;
+
+    function reset() {
         clearInterval(Interval);
         mins = '00';
         tens = '00';
@@ -30,6 +33,12 @@ window.onload = function() {
         appendMins.innerHTML = mins;
         appendTens.innerHTML = tens;
         appendSeconds.innerHTML = seconds;
+        document.getElementById("result-printer").innerHTML = "";
+    }
+
+    function start() {
+        clearInterval(Interval);
+        Interval = setInterval(startTimer, 10)
     }
 
     function startTimer() {

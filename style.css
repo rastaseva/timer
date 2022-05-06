@@ -10,6 +10,17 @@ body {
     text-align: center;
 }
 
+.button-results {
+    display: flex;
+    align-items: center;
+}
+
+#result-printer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
 h1,
 h2,
 h3 {

@@ -11,14 +11,20 @@
 
 <body>
     <div class="wrapper">
-        <h2>Секундомер от JS</h2>
+        <h2>JS Timer</h2>
         <p>
             <span id="mins">00</span><span class="dots">:</span><span id="seconds">00</span><span class="commas">.</span><span id="tens">00</span>
         </p>
-        <button id="button-start">Start</button>
-        <button id="button-stop">Stop</button>
-        <button id="button-circle">Circle</button>
-        <button id="button-reset">Reset</button>
+        <div class="button-results">
+            <div id="button-wrapper">
+                <button id="button-start">Start</button>
+                <button id="button-stop">Stop</button>
+                <button id="button-circle">Circle</button>
+                <button id="button-reset">Reset</button>
+            </div>
+            <div id="result-printer">
+            </div>
+        </div>
     </div>
     <script src="./script.js"></script>
 </body>
